@@ -2,12 +2,6 @@ import React,{useState} from 'react';
 import classes from './Users.module.css';
 import User from './User';
 
-const DUMMY_USERS = [
-    { id: 'u1', name: 'Max' },
-    { id: 'u2', name: 'Manuel' },
-    { id: 'u3', name: 'Julia' },
-];
-
 const Users = (props) => {
     const [showUsers, setShowUsers] = useState(true);
 
@@ -17,7 +11,7 @@ const Users = (props) => {
 
     const usersList = (
         <ul>
-            {DUMMY_USERS.map((user) => (
+            {props.users.map((user) => (
                 <User 
                     key={user.id}
                     name={user.name}
